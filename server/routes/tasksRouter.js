@@ -6,8 +6,8 @@ router.get('/', (req, res) => {
     console.log('in GET /tasks');
     const sqlText = 'SELECT * FROM tasks;';
     pool.query(sqlText)
-    .then((dbresult)=>{
-        console.log(`${dbResult.rows.length}rows to send.`)
+    .then((dbresult)=> { 
+        console.log(`${dbResult.rows.length} rows to send.`)
         res.send(dbResult.rows);
     })
     .catch((dbErr)=> {
@@ -15,3 +15,5 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     });
 });
+
+
