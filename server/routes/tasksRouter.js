@@ -41,3 +41,28 @@ router.post('/', (req, res) => {
             res.sendStatus(500);
         });
 });
+
+// router.put('/upvotes/:id', (req, res) => {
+//     console.log('req.params', req.params);
+//     console.log('req.body', req.body);
+//     const taskIdToUpdate = req.params.id;
+//     const sqlText = `
+//     UPDATE "tasks"
+//     SET "tasksName"=$1
+//     WHERE "Id"=$2;
+//     `;
+//     const sqlValues = [
+//         currentTask,
+//         taskIdToUpdate
+//     ]
+//     pool.query(sqoText, sqlValues)
+//     .then((dbResult)=> {
+//         res.sendStatus(200);
+//     })
+//     .catch((dbErr)=> {
+//         console.error(dbErr);
+//         res.sendStatus(500);
+//     })
+// });
+
+module.exports = router; 
