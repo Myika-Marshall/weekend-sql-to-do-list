@@ -20,8 +20,8 @@ function renderTasks(){
             <tr>
             <td>${task.taskName}</td>
             <td>${task.Status}</td>
-            <td><button class="update-btn" data-id="${song.id}" data-rank="${song.rank}">^^</button></td>
-            <td><button class="delete-btn" data-id="${song.id}">X</button></td>
+            <td><button class="update-btn" data-id="${task.id}"data-task="${task.task}">^^</button></td>
+            <td><button class="delete-btn" data-id="${task.id}">X</button></td>
             </tr>
             `);
         }
@@ -43,7 +43,7 @@ function addTask() {
     });
 }
 
-function deleteSong() {
+function deleteTask() {
     const taskIdToDelete = $(this).data('id');
     $.ajax({
         type: 'DELETE',
@@ -71,9 +71,10 @@ function upVoteTask() {
     })
 }
 
-function updateSong() {
+function updateTask() {
     console.log('updateTaskClicked!')
     const updateTask = {
+        taskName: $('#Task').val()  
 }
 $.ajax({
     method: 'PUT',

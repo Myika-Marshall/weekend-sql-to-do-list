@@ -65,4 +65,24 @@ router.put('/upvotes/:id', (req, res) => {
     })
 });
 
+router.delete('/', (req,res)=> {
+    console.log('in DELETE /tasks');
+    console.log('req.params:', req.params);
+    const taskIdToDelete = req.params.id;
+    const sqlText = `
+    DELETE FROM "tasks"
+        WHERE "id"=$1;
+        `;
+    const sqlValues = [ taskIdToDelete];
+
+    pool.query(sqlText, sqlValues)
+    .then((deResult)=> {
+        res.sendStatus(200);
+    })
+    .catch((dbErr)=>{
+        console.error(dbErr);
+        res.sendStatus(500);
+    })
+});
+
 module.exports = router; 
