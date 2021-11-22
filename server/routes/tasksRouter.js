@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     console.log('in GET /tasks');
     const sqlText = 'SELECT * FROM tasks;';
     pool.query(sqlText)
-    .then((dbresult)=> { 
+    .then((dbResult)=> { 
         console.log(`${dbResult.rows.length} rows to send.`)
         res.send(dbResult.rows);
     })
@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     const newTask = req.body;
     const sqlText = `
     INSERT INTO "tasks"
-        ("tasksName", "taskStatus")
+        ("tasksName","taskStatus")
     VALUES
         ($1, $2);
     `;

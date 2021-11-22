@@ -4,7 +4,7 @@ function onReady() {
     renderTasks();
     $('#addButton').on('click', addTask);
     $('#tasksTableBody').on('click', '.update-btn', upvoteTask);
-    $('#tasksTableBody').on('click', '.delete-btn', deleteSong);
+    $('#tasksTableBody').on('click', '.delete-btn', deleteTask);
     $('#update-button').on('click', updateTask);
 }
 
@@ -54,7 +54,7 @@ function deleteTask() {
     })
 };
 
-function upVoteTask() {
+function upvoteTask() {
     const taskIdToUpvote = $(this).data('id');
     const currentTask = $(this).data('task');
 

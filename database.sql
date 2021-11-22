@@ -11,3 +11,8 @@ VALUES
 	('Complete homework', false),
 	('Make Dinner', false),
 	('Buy colorful lightbulb', false);
+	
+INSERT INTO "tasks"
+	("tasksName")
+VALUES 
+	('Bathe Children')

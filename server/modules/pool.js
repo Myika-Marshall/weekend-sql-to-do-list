@@ -3,7 +3,7 @@ const Pool = pg.Pool;
 
 const config = {
     host: 'localhost',
-    database:'tasks'
+    database:'weekend-to-do-app'
 };
 
 const pool = new Pool(config);
